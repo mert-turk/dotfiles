@@ -1,0 +1,66 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](#a3aed2)\
+$os\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260)\
+$line_break\
+$character
+"""
+
+# ─────────────────────────────────────────────
+# OS
+# ─────────────────────────────────────────────
+
+[os]
+disabled = false
+style = "bg:#a3aed2 fg:#090c0c"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Ubuntu = "󰕈"
+Linux = "󰌽"
+
+
+# ─────────────────────────────────────────────
+# Directory
+# ─────────────────────────────────────────────
+
+[directory]
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+
+# ─────────────────────────────────────────────
+# Git Branch
+# ─────────────────────────────────────────────
+
+[git_branch]
+symbol = " "
+style = "fg:#769ff0 bg:#394260"
+format = "[ $symbol$branch ]($style)"
+
+
+# ─────────────────────────────────────────────
+# Git Status
+# ─────────────────────────────────────────────
+
+[git_status]
+style = "fg:#769ff0 bg:#394260"
+format = "[ $all_status$ahead_behind ]($style)"
+
+
+# ─────────────────────────────────────────────
+# Prompt Character
+# ─────────────────────────────────────────────
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
